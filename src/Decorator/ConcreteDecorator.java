@@ -1,6 +1,6 @@
 package Decorator;
 /**
- * 具体的装饰者
+ * @Component：具体的装饰者
  * 负责给构件对象“贴上”附加的责任。
  * @author dell
  *
