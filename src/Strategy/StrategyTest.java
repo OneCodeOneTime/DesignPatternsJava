@@ -43,7 +43,7 @@ public class StrategyTest {
 
 
 /*
- * 排序算法的上下文：持有一个排序算法的引用。和算法交互。调用排序算法。
+ * @Component：排序算法的上下文：持有一个排序算法的引用。和算法交互。调用排序算法。
  */
 class SortUse<T extends Comparable<? super T>>{
 	private Sort<T> sort;
@@ -81,7 +81,7 @@ class SortUse<T extends Comparable<? super T>>{
 }
 
 /*
- *排序的虚拟类：代表一个排序算法对象。 为上下文对象定义了公共接口。
+ *@Component：排序的虚拟类：代表一个排序算法对象。 为上下文对象定义了公共接口。
  */
 abstract class Sort<T extends Comparable<? super T>>{
 	public abstract void sort(T[] t);
@@ -109,7 +109,7 @@ class BubbleSort<T extends Comparable<? super T>> extends Sort<T>{
 }
 
 /*
- * 具体的算法实现类：插入排序
+ * @Component：具体的算法实现类：插入排序
  * 将值插入一个已经排好序的序列
  */
 class InsertSort<T extends Comparable<? super T>> extends Sort<T>{
@@ -136,7 +136,7 @@ class InsertSort<T extends Comparable<? super T>> extends Sort<T>{
 }
 
 /*
- * 具体的算法实现类：直接选择排序
+ * @Component：具体的算法实现类：直接选择排序
  * 从后面的序列中选取最大或最小的值，将其和已经排好序的序列的后一位交换值
  */
 class SelectionSort<T extends Comparable<? super T>> extends Sort<T>{
@@ -167,7 +167,7 @@ class SelectionSort<T extends Comparable<? super T>> extends Sort<T>{
 }
 
 /*
- * 具体的算法实现类：归并排序
+ * @Component：具体的算法实现类：归并排序
  * （1）两个序列各自排好序
  * （2）合并两个排好序的序列，使之成为一个有序的序列
  */
@@ -227,7 +227,7 @@ class MergeSort<T extends Comparable<? super T>> extends Sort<T>{
 }
 
 /*
- * 具体的算法实现类：快速排序
+ * @Component：具体的算法实现类：快速排序
  *（1）在数据集之中，选择一个元素作为"基准"（pivot）。
  *（2）所有小于"基准"的元素，都移到"基准"的左边；所有大于"基准"的元素，都移到"基准"的右边。
  *（3）对"基准"左边和右边的两个子集，不断重复第一步和第二步，直到所有子集只剩下一个元素为止。

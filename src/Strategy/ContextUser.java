@@ -1,6 +1,6 @@
 package Strategy;
 /**
- * 上层调用者，和上下文交互
+ * @Component：上层调用者，和上下文交互
  * @author dell
  *
  */

@@ -17,7 +17,7 @@ public class DecoratorTest {
 }
 
 /**
- * 抽象组件->也是最本质的东西，不管怎么装饰，它的本质不变，比如一个人，再怎么化妆，她还是个人。
+ * @Component：抽象组件->也是最本质的东西，不管怎么装饰，它的本质不变，比如一个人，再怎么化妆，她还是个人。
  * 共同的父类
  * 房子的概念
  * @author dell
@@ -31,7 +31,7 @@ interface House{
 }
 
 /**
- * 具体组件->充当被装饰的角色，初始化的角色，装饰的基础。
+ * @Component：具体组件->充当被装饰的角色，初始化的角色，装饰的基础。
  * 实体->毛坯房，待装修
  * @author dell
  *
@@ -51,7 +51,7 @@ class Rough implements House{
 }
 
 /**
- * 装饰类的共同父类，也继承了抽象组件
+ * @Component：装饰类的共同父类，也继承了抽象组件
  * 装修的概念
  * @author dell
  *
@@ -73,7 +73,7 @@ abstract class Decoration implements House{
 }
 
 /**
- * 具体装饰类：家具类
+ * @Component：具体装饰类：家具类
  * @author dell
  *
  */
@@ -106,7 +106,7 @@ class Furniture extends Decoration{
 }
 
 /**
- * 具体装饰类：电器类
+ * @Component：具体装饰类：电器类
  * @author dell
  *
  */
@@ -116,22 +116,22 @@ class ElectricalEquipment extends Decoration{
 		super(house);
 	}
 	//自己独有的方法：返回电器的价格
-		public double electricalEquipmentPrice(){
-			return 40;
-		}
-		//自己独有的方法：返回电器的描述
-		public String electricalEquipmentDes(){
-			return "[btp电器：众里寻他千百度，想要几度就几度。("+this.electricalEquipmentPrice()+"万元)]";
-		}
-		
-		//修饰后的行为
-		@Override
-		public String description() {
-			return super.description()+this.electricalEquipmentDes();
-		}
+	public double electricalEquipmentPrice(){
+		return 40;
+	}
+	//自己独有的方法：返回电器的描述
+	public String electricalEquipmentDes(){
+		return "[btp电器：众里寻他千百度，想要几度就几度。("+this.electricalEquipmentPrice()+"万元)]";
+	}
+	
+	//修饰后的行为
+	@Override
+	public String description() {
+		return super.description()+this.electricalEquipmentDes();
+	}
 
-		@Override
-		public double getPrice() {
-			return super.getPrice()+this.electricalEquipmentPrice();
-		}
+	@Override
+	public double getPrice() {
+		return super.getPrice()+this.electricalEquipmentPrice();
+	}
 }
