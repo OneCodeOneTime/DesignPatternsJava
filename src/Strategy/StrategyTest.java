@@ -109,7 +109,7 @@ class BubbleSort<T extends Comparable<? super T>> extends Sort<T>{
 }
 
 /*
- * @Component：具体的算法实现类：插入排序
+ * @Component：具体的算法实现类：直接插入排序
  * 将值插入一个已经排好序的序列
  */
 class InsertSort<T extends Comparable<? super T>> extends Sort<T>{
@@ -134,6 +134,20 @@ class InsertSort<T extends Comparable<? super T>> extends Sort<T>{
 	}
 	
 }
+
+/*
+ * @Component：具体的算法实现类：希尔排序
+ * 
+ */
+class ShellSort<T extends Comparable<? super T>> extends Sort<T>{
+
+	@Override
+	public void sort(T[] t) {
+		
+	}
+	
+}
+
 
 /*
  * @Component：具体的算法实现类：直接选择排序
@@ -165,6 +179,21 @@ class SelectionSort<T extends Comparable<? super T>> extends Sort<T>{
 	}
 	
 }
+
+/*
+ * @Component：具体的算法实现类：堆排序
+ * 
+ */
+class HeapSort<T extends Comparable<? super T>> extends Sort<T>{
+
+	@Override
+	public void sort(T[] t) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
+
 
 /*
  * @Component：具体的算法实现类：归并排序
